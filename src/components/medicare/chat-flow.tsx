@@ -28,9 +28,7 @@ export function ChatFlow({ onComplete }: ChatFlowProps) {
   const [history, setHistory] = useState<{ question: string; answer: string }[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const currentQuestion = QUESTIONS[step];
-  if (!currentQuestion) return null;
-
+  const currentQuestion = QUESTIONS[step]!;
   const progress = Math.round(((step + 1) / QUESTIONS.length) * 100);
 
   useEffect(() => {
