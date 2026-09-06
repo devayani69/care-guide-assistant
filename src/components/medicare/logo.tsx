@@ -7,9 +7,7 @@ export function MedicareLogo({ className = "" }: { className?: string }) {
         <HeartPulse className="h-6 w-6" />
       </div>
       <div className="flex flex-col">
-        <span className="text-lg font-bold leading-tight text-foreground">
-          MediCare
-        </span>
+        <span className="text-lg font-bold leading-tight text-foreground">MediCare</span>
         <span className="text-xs font-medium leading-tight text-muted-foreground">
           Readmission Risk
         </span>

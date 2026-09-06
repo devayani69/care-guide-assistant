@@ -85,9 +85,7 @@ export function ResultScreen({ data, result, onRestart }: ResultScreenProps) {
             </div>
 
             <div className="mt-8 rounded-2xl bg-secondary p-6">
-              <h2 className="text-lg font-semibold text-foreground">
-                Recommendation
-              </h2>
+              <h2 className="text-lg font-semibold text-foreground">Recommendation</h2>
               <p className="mt-2 text-muted-foreground">{recommendation}</p>
             </div>
 
@@ -95,10 +93,7 @@ export function ResultScreen({ data, result, onRestart }: ResultScreenProps) {
               <SummaryItem label="Age" value={`${data.age}`} />
               <SummaryItem label="Admitted" value={`${data.daysAdmitted}d`} />
               <SummaryItem label="Meds" value={`${data.medications}`} />
-              <SummaryItem
-                label="Prior visits"
-                value={`${data.priorInpatientVisits}`}
-              />
+              <SummaryItem label="Prior visits" value={`${data.priorInpatientVisits}`} />
             </div>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -121,9 +116,7 @@ export function ResultScreen({ data, result, onRestart }: ResultScreenProps) {
 function SummaryItem({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl bg-muted p-3">
-      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-        {label}
-      </p>
+      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</p>
       <p className="mt-1 text-lg font-bold text-foreground">{value}</p>
     </div>
   );

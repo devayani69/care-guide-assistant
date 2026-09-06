@@ -29,9 +29,8 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
             </h1>
 
             <p className="mt-4 text-lg text-muted-foreground">
-              MediCare Readmission Risk Assistant guides you through a quick,
-              conversational intake and estimates a patient's likelihood of
-              returning to the hospital within 30 days.
+              MediCare Readmission Risk Assistant guides you through a quick, conversational intake
+              and estimates a patient's likelihood of returning to the hospital within 30 days.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -61,9 +60,7 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
                 Start Assessment
                 <ArrowRight className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
               </Button>
-              <p className="text-sm text-muted-foreground">
-                Takes about 1 minute to complete.
-              </p>
+              <p className="text-sm text-muted-foreground">Takes about 1 minute to complete.</p>
             </div>
           </div>
         </div>
@@ -83,9 +80,7 @@ function FeatureCard({
 }) {
   return (
     <div className="rounded-2xl bg-secondary p-4">
-      <div className="mb-2 inline-flex rounded-xl bg-primary/10 p-2 text-primary">
-        {icon}
-      </div>
+      <div className="mb-2 inline-flex rounded-xl bg-primary/10 p-2 text-primary">{icon}</div>
       <h3 className="font-semibold text-foreground">{title}</h3>
       <p className="text-sm text-muted-foreground">{description}</p>
     </div>

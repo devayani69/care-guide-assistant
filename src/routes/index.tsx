@@ -55,11 +55,7 @@ function Index() {
       {screen === "landing" && <LandingScreen onStart={handleStart} />}
       {screen === "chat" && <ChatFlow onComplete={handleComplete} />}
       {screen === "result" && patientData && riskResult && (
-        <ResultScreen
-          data={patientData}
-          result={riskResult}
-          onRestart={handleRestart}
-        />
+        <ResultScreen data={patientData} result={riskResult} onRestart={handleRestart} />
       )}
       {screen !== "chat" && <MedicareFooter />}
     </div>

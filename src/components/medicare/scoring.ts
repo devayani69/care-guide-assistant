@@ -19,14 +19,7 @@ export function calculateRisk(data: PatientData): RiskResult {
     data.daysAdmitted * 0.8 +
     data.labProcedures * 0.08;
 
-  const maxPossible =
-    10 * 7 +
-    40 * 2.5 +
-    10 * 2 +
-    16 * 1.5 +
-    100 * 0.15 +
-    14 * 0.8 +
-    120 * 0.08;
+  const maxPossible = 10 * 7 + 40 * 2.5 + 10 * 2 + 16 * 1.5 + 100 * 0.15 + 14 * 0.8 + 120 * 0.08;
 
   const score = Math.min(100, Math.max(0, (weightedSum / maxPossible) * 100));
 

@@ -25,9 +25,7 @@ export function ChatFlow({ onComplete }: ChatFlowProps) {
   const [step, setStep] = useState(0);
   const [data, setData] = useState<PatientData>(INITIAL_DATA);
   const [inputValue, setInputValue] = useState("");
-  const [history, setHistory] = useState<
-    { question: string; answer: string }[]
-  >([]);
+  const [history, setHistory] = useState<{ question: string; answer: string }[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const currentQuestion = QUESTIONS[step];
@@ -57,17 +55,11 @@ export function ChatFlow({ onComplete }: ChatFlowProps) {
       if (!trimmed) return;
       nextData = { ...data, name: trimmed };
       setData(nextData);
-      setHistory((prev) => [
-        ...prev,
-        { question: currentQuestion.label, answer: trimmed },
-      ]);
+      setHistory((prev) => [...prev, { question: currentQuestion.label, answer: trimmed }]);
     } else {
       const numericValue = Number(inputValue);
       if (Number.isNaN(numericValue)) return;
-      const clamped = Math.max(
-        currentQuestion.min,
-        Math.min(currentQuestion.max, numericValue)
-      );
+      const clamped = Math.max(currentQuestion.min, Math.min(currentQuestion.max, numericValue));
       nextData = { ...data, [currentQuestion.id]: clamped } as PatientData;
       setData(nextData);
       setHistory((prev) => [
@@ -113,8 +105,8 @@ export function ChatFlow({ onComplete }: ChatFlowProps) {
           className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-4 overflow-y-auto pb-4"
         >
           <AssistantMessage>
-            Hi there. I'm your readmission risk assistant. Let's check your
-            readmission risk together — I'll ask a few quick questions.
+            Hi there. I'm your readmission risk assistant. Let's check your readmission risk
+            together — I'll ask a few quick questions.
           </AssistantMessage>
 
           {history.map((entry, index) => (
