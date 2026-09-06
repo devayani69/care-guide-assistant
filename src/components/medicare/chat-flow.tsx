@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, User, Bot, ChevronRight } from "lucide-react";
+import { User, Bot, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";

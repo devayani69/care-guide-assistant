@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { ArrowRight, ShieldCheck, Stethoscope, ClipboardList } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MedicareLogo } from "./logo";
@@ -76,7 +77,7 @@ function FeatureCard({
   title,
   description,
 }: {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   description: string;
 }) {

@@ -77,14 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "MediCare Readmission Risk Assistant" },
+      {
+        name: "description",
+        content:
+          "Predict a patient's 30-day hospital readmission risk with a guided, conversational intake powered by machine learning.",
+      },
+      { name: "author", content: "MediCare" },
+      { property: "og:title", content: "MediCare Readmission Risk Assistant" },
+      {
+        property: "og:description",
+        content:
+          "Predict a patient's 30-day hospital readmission risk with a guided, conversational intake powered by machine learning.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
