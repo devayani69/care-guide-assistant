@@ -50,10 +50,13 @@ export function ChatFlow({ onComplete }: ChatFlowProps) {
   const handleSubmit = (e?: React.FormEvent) => {
     e?.preventDefault();
 
+    let nextData = data;
+
     if (currentQuestion.id === "name") {
       const trimmed = inputValue.trim();
       if (!trimmed) return;
-      setData((prev) => ({ ...prev, name: trimmed }));
+      nextData = { ...data, name: trimmed };
+      setData(nextData);
       setHistory((prev) => [
         ...prev,
         { question: currentQuestion.label, answer: trimmed },
@@ -65,7 +68,8 @@ export function ChatFlow({ onComplete }: ChatFlowProps) {
         currentQuestion.min,
         Math.min(currentQuestion.max, numericValue)
       );
-      setData((prev) => ({ ...prev, [currentQuestion.id]: clamped }));
+      nextData = { ...data, [currentQuestion.id]: clamped } as PatientData;
+      setData(nextData);
       setHistory((prev) => [
         ...prev,
         {
@@ -78,7 +82,7 @@ export function ChatFlow({ onComplete }: ChatFlowProps) {
     if (step < QUESTIONS.length - 1) {
       setStep((prev) => prev + 1);
     } else {
-      onComplete(data);
+      onComplete(nextData);
     }
   };
 
